@@ -1,0 +1,24 @@
+<h2>Book list</h2>
+<p><a routerLink="/product/product-create">Create new product</a></p>
+<table class="table table-hover border">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <tr *ngFor="let product of productList">
+    <td><a [routerLink]="['/product/product-detail',product.id]">{{product.id}}</a></td>
+    <td><a [routerLink]="['/product/product-detail',product.id]">{{product.name}}</a></td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td><a><img [src]="product.image"></a></td>
+    <td><a [routerLink]="['/product/product-edit',product.id]">Edit</a></td>
+    <td><a [routerLink]="['/product/product-delete',product.id]">Delete</a></td>
+  </tr>
+</table>
